@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studeo 2.0 que funciona</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+   <div class="form_Container">
+          <form id="form">
+
+                <label for="Ra">RA (Registro Acadêmico):</label>
+                <input type="text" id="Ra" name="Ra" >
+                
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" >
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                
+                <input type="submit" value="Enviar">
+          </form>
+    </div>
+
+    <div class="table_Container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ra</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="table_Content">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./assets/main.js"></script>
+</body>
+</html>
