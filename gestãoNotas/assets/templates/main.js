@@ -1,9 +1,9 @@
-function adicionaRegistroAlunos() {
+function adicionaDadosAluno() {
     
     try {
-        const Ra = document.getElementById("Ra").value;
-        const nome = document.getElementById("nome").value;
-        const email = document.getElementById("email").value;
+        const Ra = document.getElementById("input_ra").value;
+        const nome = document.getElementById("input_nome").value;
+        const email = document.getElementById("input_email").value;
         
         if (!Ra || !nome || !email) {
             throw new Error("Por favor, preencha todos os campos.");
@@ -57,5 +57,5 @@ window.onload = function () {
 }
 document.getElementById("form").addEventListener('submit', function(event) {
     event.preventDefault(); 
-    adicionaRegistroAlunos();
+    adicionaDadosAluno();
 });
