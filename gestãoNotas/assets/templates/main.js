@@ -27,6 +27,8 @@ function adicionaDadosAluno() {
             <td>${Ra} </td> 
             <td>${nome}</td> 
             <td>${email}</td>
+            <td> <button onclick="cadastrarNotas('${Ra}', '1')"> 1º Bimestre </button> </td>
+            <td> <button onclick="cadastrarNotas('${Ra}', '2')"> 1º Bimestre </button> </td>
         `;
     
         const corpoTabela = document.getElementById('table_Content');
