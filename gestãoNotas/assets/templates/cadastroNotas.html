@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicar Notas</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="/gestãoNotas/assets/Icone_site.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="table_Container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ra</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    
+                    <div id="primeiro_bimestre">
+        
+                            
+                                <th class="hidden-header">Prova1</th>
+                                <th class="hidden-header">AEP1</th>
+                                <th class="hidden-header">prova_integrada1</th>
+                              
+                    </div>  
+                    <div id="segundo_bimestre">
+                          
+                                <th class="hidden-header2">Prova2</th>
+                                <th class="hidden-header2">AEP2</th>
+                                <th class="hidden-header2">prova_integrada2</th>
+                        
+            </thead>
+            <tbody id="table_Content">
+               
+            </tbody>
+        </table>
+    </div>
+
+   
+    <button onclick="btnToggle()">exibir notas do primeiro bimestres</button>
+    <button onclick="btnToggle2()">exibir notas do segundo bimestre</button>
+    <script src="./aplicarNotas.js"></script>
+</body>
+</html>

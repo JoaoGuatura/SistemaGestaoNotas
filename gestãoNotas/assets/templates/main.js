@@ -18,7 +18,7 @@ function adicionaDadosAluno() {
         }
 
         if (!/^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(email)) {
-            throw new Error("Insira um email válido.");
+            throw new Error("Insira um email válido."); 
         }
         
         const novaLinha = document.createElement("tr")
@@ -27,8 +27,7 @@ function adicionaDadosAluno() {
             <td>${Ra} </td> 
             <td>${nome}</td> 
             <td>${email}</td>
-            <td> <button onclick="cadastrarNotas('${Ra}', '1')"> 1º Bimestre </button> </td>
-            <td> <button onclick="cadastrarNotas('${Ra}', '2')"> 1º Bimestre </button> </td>
+
         `;
     
         const corpoTabela = document.getElementById('table_Content');
