@@ -5,25 +5,35 @@ window.onload = function () {
     tabelaDados.forEach(function(dados) {
         const novaLinha = document.createElement("tr");
         novaLinha.innerHTML = `
-        <td>${dados.Ra}</td>
-        <td>${dados.nome}</td>
-        <td>${dados.email}</td>
+            <td>${dados.Ra}</td>
+            <td class="nomeAluno">${dados.nome}</td>
+            <td>${dados.email}</td>
         `;
         corpoTabela.appendChild(novaLinha);
     });
+
+    
+    const selectAluno = document.querySelectorAll('.nomeAluno');
+    selectAluno.forEach(nome => {
+        nome.addEventListener('click', function(){
+            const alunoSelecionado = tabelaDados.find(aluno => aluno.nome === nome.textContent);
+            if (alunoSelecionado) {
+                criaNotasAluno(alunoSelecionado);
+            }
+        });
+    });
 }
+
 document.getElementById("form").addEventListener('submit', function(event) {
     event.preventDefault(); 
     adicionaDadosAluno();
 });
 
 function btnToggle() {
-    
     const hiddenHeaders = document.querySelectorAll(".hidden-header");
 
-   
     hiddenHeaders.forEach(header => {
-     
+        
         if (header.style.visibility === "hidden") {
             header.style.visibility = "visible";
         } else {
@@ -33,12 +43,10 @@ function btnToggle() {
 }
 
 function btnToggle2() {
-    
+
     const hiddenHeaders = document.querySelectorAll(".hidden-header2");
 
-   
     hiddenHeaders.forEach(header => {
-     
         if (header.style.visibility === "hidden") {
             header.style.visibility = "visible";
         } else {
@@ -47,10 +55,19 @@ function btnToggle2() {
     });
 }
 
-function criaDivAluno(){
+function criaNotasAluno(aluno) {
     const card = document.createElement("div");
+    card.className = "card";
     
+    card.innerHTML = `
+        <p><strong>Nome:</strong> ${aluno.nome}</p>
+        <p><strong>RA:</strong> ${aluno.Ra}</p>
+        <p><strong>Email:</strong> ${aluno.email}</p>
+    `;
+
+    document.body.appendChild(card);
 }
+<<<<<<< Updated upstream
 
 function calcularNota(){
     const tabela = document.getElementById("table_Content");
@@ -81,3 +98,5 @@ function calcularNota(){
 
 }
 }
+=======
+>>>>>>> Stashed changes
