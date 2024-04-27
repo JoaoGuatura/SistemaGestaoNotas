@@ -53,16 +53,21 @@ function criaDivAluno(){
 }
 
 function calcularNota(){
-    const tabela = document.getElementById("notasTabela");
+    const tabela = document.getElementById("table_Content");
     const fileira = tabela.getElementsByTagName("tr");
+    const resultadoBimestre1 = document.getElementById("resultadoBimestre1");
+    const resultadoBimestre2 = document.getElementById("resultadoBimestre2");
 
-    // Iterating over rows skipping the first one (header row)
-    for (let i = 1; i < rows.length; i++) {
+    resultadoBimestre1.innerHTML = "";
+    resultadoBimestre2.innerHTML = "";
+
+
+    for (let i = 1; i < fileira.length; i++) {
         let celulas = fileira[i].getElementsByTagName("td");
         let totalNotaBimestre1 = 0;
         let totalNotaBimestre2 = 0;
 
-        // Skipping first 3 cells as they contain non-numeric data
+   
         for (let j = 3; j < celulas.length; j++) {
             let nota = parseFloat(celulas[j].textContent);
             if (j < 6) {
@@ -71,6 +76,8 @@ function calcularNota(){
                 totalNotaBimestre2 += nota;
             }
         }
+        resultadoBimestre1.innerHTML += "Total Nota Bimestre 1 para o aluno " + (i + 1) + ": " + totalNotaBimestre1 + "<br>";
+        resultadoBimestre2.innerHTML += "Total Nota Bimestre 2 para o aluno " + (i + 1) + ": " + totalNotaBimestre2 + "<br>";
 
 }
 }
