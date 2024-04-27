@@ -49,7 +49,7 @@ function calcularPrimeiraMedia() {
         const AEP1 = parseFloat(aluno.AEP1) || 0;
         const prova_integrada1 = parseFloat(aluno.prova_integrada1) || 0;
         const media_bimestral1 = (prova1 + AEP1 + prova_integrada1) / 3;
-        aluno.media_bimestral1 = media_bimestral1.toFixed(2);
+        aluno.media_bimestral1 = media_bimestral1.toFixed(1);
     });
     localStorage.setItem('tabelaDados', JSON.stringify(tabelaDados));
 }
@@ -104,18 +104,20 @@ function calcularNota() {
     const corpoTabela = document.getElementById('table_Content');
     const linhas = corpoTabela.getElementsByTagName('tr');
 
-    for (let i = 1; i < linhas.length; i++) {
+    for (let i = 0; i < linhas.length; i++) {
         const colunas = linhas[i].getElementsByTagName('td');
-        const prova1 = parseFloat(colunas[3].innerText);
-        const AEP1 = parseFloat(colunas[4].innerText);
-        const provaIntegrada1 = parseFloat(colunas[5].innerText);
+        let totalNotas = 0;
 
-        if (!isNaN(prova1) && !isNaN(AEP1) && !isNaN(provaIntegrada1)) {
-            const media = (prova1 + AEP1 + provaIntegrada1) / 3;
-            colunas[6].innerText = media.toFixed(2); 
-        } else {
-            colunas[6].innerText = ''; 
+        // Iterar pelas colunas de notas e somar seus valores
+        for (let j = 3; j <= 5; j++) {
+            const nota = parseFloat(colunas[j].innerText);
+            if (!isNaN(nota)) {
+                totalNotas += nota;
+            }
         }
+
+        // Definir a soma das notas na coluna correspondente
+        colunas[6].innerText = totalNotas.toFixed(2);
     }
 }
 function atualizarTabelaNotas(tabelaDados) {
