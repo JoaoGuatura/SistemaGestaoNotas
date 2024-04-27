@@ -5,9 +5,17 @@ window.onload = function () {
     tabelaDados.forEach(function(dados) {
         const novaLinha = document.createElement("tr");
         novaLinha.innerHTML = `
-            <td>${dados.Ra}</td>
-            <td class="nomeAluno">${dados.nome}</td>
-            <td>${dados.email}</td>
+        <td>${dados.Ra}</td>
+        <td>${dados.nome}</td>
+        <td>${dados.email}</td>
+        <td> <input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="10" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="10" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
         `;
         corpoTabela.appendChild(novaLinha);
     });
@@ -28,6 +36,23 @@ document.getElementById("form").addEventListener('submit', function(event) {
     event.preventDefault(); 
     adicionaDadosAluno();
 });
+
+function adicionarCamposNotas() {
+    const tabela = document.getElementById("table_Content");
+    const fileiras = tabela.getElementsByTagName("tr");
+
+    for (let i = 0; i < fileiras.length; i++) {
+        const celulas = fileiras[i].getElementsByTagName("td");
+        for (let j = 0; j < celulas.length; j++) {
+            if (j >= 3 && j <= 8) { 
+                celulas[j].innerHTML = `<input type="number" class="notaInput" />`;
+            }
+        }
+    }
+    const botaoEnviarNotas = document.querySelector('.botaoEnviar button');
+    botaoEnviarNotas.disabled = false;
+}
+
 
 function btnToggle() {
     const hiddenHeaders = document.querySelectorAll(".hidden-header");

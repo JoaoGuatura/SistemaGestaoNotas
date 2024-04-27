@@ -19,16 +19,25 @@
                     <div id="primeiro_bimestre">
         
                             
-                                <th id="prova1" class="hidden-header">Prova1</th>
-                                <th id="aep1" class="hidden-header">AEP1</th>
-                                <th id="prova_int1" class="hidden-header">prova_integrada1</th>
-                              
+                                <th id="prova1" class="hidden-header">
+                                    Prova1
+                                   
+                                </th>
+                                <th id="aep1" class="hidden-header">AEP1
+                           
+                                </th>
+
+                                <th id="prova_int1" class="hidden-header">prova_integrada1
+                    
+                                </th>
+                                <th id="media_bimestral1">Primeira média</th>
                     </div>  
                     <div id="segundo_bimestre">
                           
                                 <th id="prova2" class="hidden-header2">Prova2</th>
                                 <th id="aep2" class="hidden-header2">AEP2</th>
                                 <th id="prova_int2" class="hidden-header2">prova_integrada2</th>
+                                <th id="media_bimestral2">Segunda média</th>
                         
             </thead>
             <tbody id="table_Content">
@@ -43,8 +52,14 @@
 
 
     <div class="botaoCalcular">
+        <button onclick="adicionarNotas()">Inserir Notas</button>
         <button onclick="calcularNota()">Calcular Notas</button>
     </div>
+
+    <div class="botaoEnviar">
+        <button onclick="enviarNotas()">Enviar Notas</button>
+    </div>
+    
 
    
     <button onclick="btnToggle()">exibir notas do primeiro bimestres</button>
