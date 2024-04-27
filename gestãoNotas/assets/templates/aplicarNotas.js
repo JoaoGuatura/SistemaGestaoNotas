@@ -8,6 +8,14 @@ window.onload = function () {
             <td>${dados.Ra}</td>
             <td class="nomeAluno">${dados.nome}</td>
             <td>${dados.email}</td>
+            <td> <input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="10" step="0.01" class="notaInput" placeholder="Média 1" readonly></td>
+        <td> <input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota"></td>
+        <td> <input type="number" min="0" max="10" step="0.01" class="notaInput" placeholder="Média 2" readonly></td>
         `;
         corpoTabela.appendChild(novaLinha);
     });
