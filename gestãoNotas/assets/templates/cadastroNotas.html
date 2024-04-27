@@ -20,6 +20,8 @@
             Cadastro de Notas
         </a>
     </div>
+
+  
     <div class="table_Container">
         <table id="notasTabela">
             <thead>
@@ -27,33 +29,20 @@
                     <th>Ra</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    
-                    <div id="primeiro_bimestre">
-        
-                            
-                                <th id="prova1" class="hidden-header">
-                                    Prova1
-                                   
-                                </th>
-                                <th id="aep1" class="hidden-header">AEP1
-                           
-                                </th>
 
-                                <th id="prova_int1" class="hidden-header">prova_integrada1
-                    
-                                </th>
-                                <th id="media_bimestral1">Primeira média</th>
-                    </div>  
-                    <div id="segundo_bimestre">
-                          
-                                <th id="prova2" class="hidden-header2">Prova2</th>
-                                <th id="aep2" class="hidden-header2">AEP2</th>
-                                <th id="prova_int2" class="hidden-header2">prova_integrada2</th>
-                                <th id="media_bimestral2">Segunda média</th>
-                        
+           
+
+                    <th class="notasParte" id="prova1" class="hidden-header">Prova 1</th>
+                    <th class="notasParte" id="aep1" class="hidden-header">AEP 1</th>
+                    <th class="notasParte" id="prova_int1" class="hidden-header">Prova Integrada 1</th>
+                    <th class="notasParte" id="media_bimestral1" class="hidden-header">Primeira média</th>
+                    <th class="notasParte" id="prova2" class="hidden-header2">Prova 2</th>
+                    <th class="notasParte" id="aep2" class="hidden-header2">AEP 2</th>
+                    <th class="notasParte" id="prova_int2" class="hidden-header2">Prova Integrada 2</th>
+                    <th class="notasParte" id="media_bimestral2" class="hidden-header2">Segunda média</th>
+                </tr>
             </thead>
-            <tbody id="table_Content">
-               
+            <tbody " id="table_Content">
             </tbody>
         </table>
     </div>
@@ -74,8 +63,9 @@
     
 
    
-    <button onclick="btnToggle()">Exibir notas do primeiro bimestre</button>
+    <button onclick="btnToggle(),exibirNotasBimestre1()">Exibir notas do primeiro bimestre</button>
     <button onclick="btnToggle2()">Exibir notas do segundo bimestre</button>
+    <button onclick="abrirFormularioEdicao('${JSON.stringify(alunoJSON)}')">Editar tabela</button>
     <script src="./aplicarNotas.js"></script>
 </body>
 </html>
