@@ -13,7 +13,7 @@
         <a class="active" id="inicio" href="\gestãoNotas\assets\templates\index.html">
             Início
         </a>
-        <span id="chevron_right1"class="material-symbols-outlined">
+        <span id="chevron_right1" class="material-symbols-outlined">
             chevron_right
         </span>
         <a class="active" id="cadastro_notas" href="\gestãoNotas\assets\templates\cadastroNotas.html">
@@ -21,7 +21,6 @@
         </a>
     </div>
 
-  
     <div class="table_Container">
         <table id="notasTabela">
             <thead>
@@ -29,20 +28,17 @@
                     <th>Ra</th>
                     <th>Nome</th>
                     <th>Email</th>
-
-           
-
-                    <th class="notasParte" id="prova1" class="hidden-header">Prova 1</th>
-                    <th class="notasParte" id="aep1" class="hidden-header">AEP 1</th>
-                    <th class="notasParte" id="prova_int1" class="hidden-header">Prova Integrada 1</th>
-                    <th class="notasParte" id="media_bimestral1" class="hidden-header">Primeira média</th>
-                    <th class="notasParte" id="prova2" class="hidden-header2">Prova 2</th>
-                    <th class="notasParte" id="aep2" class="hidden-header2">AEP 2</th>
-                    <th class="notasParte" id="prova_int2" class="hidden-header2">Prova Integrada 2</th>
-                    <th class="notasParte" id="media_bimestral2" class="hidden-header2">Segunda média</th>
+                    <th class="hidden-header" id="input_prova1">Prova 1</th>
+                    <th class="hidden-header" id="input_aep1">AEP 1</th>
+                    <th class="hidden-header" id="input_prova_int1">Prova Integrada 1</th>
+                    <th class="hidden-header" id="media_bimestral1">Primeira média</th>
+                    <th class="hidden-header2" id="input_prova2">Prova 2</th>
+                    <th class="hidden-header2" id="input_aep2">AEP 2</th>
+                    <th class="hidden-header2" id="input_prova_int2">Prova Integrada 2</th>
+                    <th class="hidden-header2" id="media_bimestral2">Segunda média</th>
                 </tr>
             </thead>
-            <tbody " id="table_Content">
+            <tbody id="table_Content">
             </tbody>
         </table>
     </div>
@@ -51,21 +47,13 @@
         <div id="resultadoBimestre2"></div>
     </div>
 
-
     <div class="botaoCalcular">
-        <button onclick="adicionarNotas()">Adicionar Notas</button>
-        <button onclick="calcularNota()">Calcular Notas</button>
+        <button>Calcular Notas</button>
     </div>
 
-    <div class="botaoEnviar">
-        <button onclick="enviarNotas()">Enviar Notas</button>
-    </div>
-    
-
-   
-    <button onclick="btnToggle(),exibirNotasBimestre1()">Exibir notas do primeiro bimestre</button>
+    <button onclick="btnToggle()">Exibir notas do primeiro bimestre</button>
     <button onclick="btnToggle2()">Exibir notas do segundo bimestre</button>
-    <button onclick="abrirFormularioEdicao('${JSON.stringify(alunoJSON)}')">Editar tabela</button>
+
     <script src="./aplicarNotas.js"></script>
 </body>
 </html>
