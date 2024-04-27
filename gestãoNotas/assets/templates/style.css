@@ -1,27 +1,41 @@
+
 th td {
-  border: 1px solid #dddddd;
-text-align: left;
-padding: 10px;
+    border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
 }
 
 table{
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 80%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
-}
+    background-color: #dddddd;
+  }
 
-.hidden-header{
-  visibility: hidden;
-}
+
+  .form_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hidden-header{
+    visibility: hidden;
+  }
 
 .hidden-header2{
   visibility: hidden;
 }
-
 
 
 
