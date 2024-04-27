@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="table_Container">
-        <table>
+        <table id="notasTabela">
             <thead>
                 <tr>
                     <th>Ra</th>
@@ -19,22 +19,25 @@
                     <div id="primeiro_bimestre">
         
                             
-                                <th class="hidden-header">Prova1</th>
-                                <th class="hidden-header">AEP1</th>
-                                <th class="hidden-header">prova_integrada1</th>
+                                <th id="prova1" class="hidden-header">Prova1</th>
+                                <th id="aep1" class="hidden-header">AEP1</th>
+                                <th id="prova_int1" class="hidden-header">prova_integrada1</th>
                               
                     </div>  
                     <div id="segundo_bimestre">
                           
-                                <th class="hidden-header2">Prova2</th>
-                                <th class="hidden-header2">AEP2</th>
-                                <th class="hidden-header2">prova_integrada2</th>
+                                <th id="prova2" class="hidden-header2">Prova2</th>
+                                <th id="aep2" class="hidden-header2">AEP2</th>
+                                <th id="prova_int2" class="hidden-header2">prova_integrada2</th>
                         
             </thead>
             <tbody id="table_Content">
                
             </tbody>
         </table>
+    </div>
+    <div class="botaoCalcular">
+        <button onclick="calcularNota()">Calcular Notas</button>
     </div>
 
    
