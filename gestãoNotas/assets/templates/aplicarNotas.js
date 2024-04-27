@@ -5,10 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     tabelaDados.forEach(function(dados) {
         const novaLinha = document.createElement("tr");
         novaLinha.innerHTML = `
-            <td>${dados.Ra}</td>
-            <td>${dados.nome}</td>
-            <td>${dados.email}</td>
-        `;
+    <td>${dados.Ra}</td>
+    <td>${dados.nome}</td>
+    <td>${dados.email}</td>
+    <td>${dados.prova1 ? dados.prova1 : `<input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
+    <td>${dados.AEP1 ? dados.AEP1 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
+    <td>${dados.prova_integrada1 ? dados.prova_integrada1 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
+    <td>${dados.prova2 ? dados.prova2 : `<input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
+    <td>${dados.AEP2 ? dados.AEP2 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
+    <td>${dados.prova_integrada2 ? dados.prova_integrada2 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
+`;
         corpoTabela.appendChild(novaLinha);
     });
 
@@ -43,41 +49,32 @@ function calcularPrimeiraMedia() {
         const AEP1 = parseFloat(aluno.AEP1) || 0;
         const prova_integrada1 = parseFloat(aluno.prova_integrada1) || 0;
         const media_bimestral1 = (prova1 + AEP1 + prova_integrada1) / 3;
-        aluno.media_bimestral1 = media_bimestral1.toFixed(2);
+        aluno.media_bimestral1 = media_bimestral1.toFixed(1);
     });
     localStorage.setItem('tabelaDados', JSON.stringify(tabelaDados));
 }
 
 function enviarNotas() {
-    calcularPrimeiraMedia(); // Adiciona cálculo da primeira média antes de enviar notas
-    const tabelaDados = JSON.parse(localStorage.getItem('tabelaDados')) || [];
-    const camposNotas = document.querySelectorAll('.notaInput');
+    const tabelaDados = [];
+    const linhas = document.querySelectorAll('#table_Content tr');
 
-    camposNotas.forEach(function(campo, index) {
-        const alunoIndex = Math.floor(index / 6); 
-        const notaIndex = index % 6;
-
-        const valorNota = campo.value.trim(); 
-        if (tabelaDados[alunoIndex]) {
-            if (notaIndex === 0) {
-                tabelaDados[alunoIndex].prova1 = valorNota;
-            } else if (notaIndex === 1) {
-                tabelaDados[alunoIndex].AEP1 = valorNota;
-            } else if (notaIndex === 2) {
-                tabelaDados[alunoIndex].prova_integrada1 = valorNota;
-            } else if (notaIndex === 3) {
-                tabelaDados[alunoIndex].prova2 = valorNota;
-            } else if (notaIndex === 4) {
-                tabelaDados[alunoIndex].AEP2 = valorNota;
-            } else if (notaIndex === 5) {
-                tabelaDados[alunoIndex].prova_integrada2 = valorNota;
-            }
-        }
+    linhas.forEach(function(linha) {
+        const colunas = linha.querySelectorAll('td');
+        const aluno = {
+            Ra: colunas[0].innerText,
+            nome: colunas[1].innerText,
+            email: colunas[2].innerText,
+            prova1: colunas[3].querySelector('input') ? colunas[3].querySelector('input').value : colunas[3].innerText,
+            AEP1: colunas[4].querySelector('input') ? colunas[4].querySelector('input').value : colunas[4].innerText,
+            prova_integrada1: colunas[5].querySelector('input') ? colunas[5].querySelector('input').value : colunas[5].innerText,
+            prova2: colunas[6].querySelector('input') ? colunas[6].querySelector('input').value : colunas[6].innerText,
+            AEP2: colunas[7].querySelector('input') ? colunas[7].querySelector('input').value : colunas[7].innerText,
+            prova_integrada2: colunas[8].querySelector('input') ? colunas[8].querySelector('input').value : colunas[8].innerText
+        };
+        tabelaDados.push(aluno);
     });
 
     localStorage.setItem('tabelaDados', JSON.stringify(tabelaDados));
-      
-    atualizarTabelaNotas(tabelaDados);
 }
 
 function atualizarTabelaNotas(tabelaDados) {
@@ -104,8 +101,24 @@ function atualizarTabelaNotas(tabelaDados) {
 }
 
 function calcularNota() {
-    calcularPrimeiraMedia(); 
-    atualizarTabelaNotas(JSON.parse(localStorage.getItem('tabelaDados')) || []);
+    const corpoTabela = document.getElementById('table_Content');
+    const linhas = corpoTabela.getElementsByTagName('tr');
+
+    for (let i = 0; i < linhas.length; i++) {
+        const colunas = linhas[i].getElementsByTagName('td');
+        let totalNotas = 0;
+
+        // Iterar pelas colunas de notas e somar seus valores
+        for (let j = 3; j <= 5; j++) {
+            const nota = parseFloat(colunas[j].innerText);
+            if (!isNaN(nota)) {
+                totalNotas += nota;
+            }
+        }
+
+        // Definir a soma das notas na coluna correspondente
+        colunas[6].innerText = totalNotas.toFixed(2);
+    }
 }
 function atualizarTabelaNotas(tabelaDados) {
     const corpoTabela = document.getElementById('table_Content');
@@ -219,4 +232,3 @@ function toggleFormularioEdicao(aluno) {
     }
     formularioEdicaoAberto = !formularioEdicaoAberto;
 }
-
