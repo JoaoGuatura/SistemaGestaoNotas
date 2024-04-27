@@ -18,7 +18,7 @@ window.onload = function () {
         nome.addEventListener('click', function(){
             const alunoSelecionado = tabelaDados.find(aluno => aluno.nome === nome.textContent);
             if (alunoSelecionado) {
-                criaNotasAluno(alunoSelecionado);
+                verificaCardExiste(alunoSelecionado);
             }
         });
     });
@@ -55,48 +55,75 @@ function btnToggle2() {
     });
 }
 
-function criaNotasAluno(aluno) {
+function verificaCardExiste(aluno) {
+
+    const cardExiste = document.querySelector('.card');
+    cardExiste ? cardExiste.remove() : criarNovoCard(aluno);
+}  
+
+function criarNovoCard(aluno){
     const card = document.createElement("div");
     card.className = "card";
     
+
     card.innerHTML = `
         <p><strong>Nome:</strong> ${aluno.nome}</p>
         <p><strong>RA:</strong> ${aluno.Ra}</p>
         <p><strong>Email:</strong> ${aluno.email}</p>
+        <button class="editarBimestre1">Editar Notas do 1º Bimestre</button>
+        <button class="editarBimestre2">Editar Notas do 2º Bimestre</button>
+    `;
+    document.body.appendChild(card);
+
+
+    const btnEditarBimestre1 = card.querySelector('.editarBimestre1');
+    const btnEditarBimestre2 = card.querySelector('.editarBimestre2');
+    
+    btnEditarBimestre1.addEventListener('click', function() {
+       
+        criarCardInput(aluno, '1');
+    });
+    
+    btnEditarBimestre2.addEventListener('click', function() {
+     
+        console.log("Editar notas do 2º Bimestre");
+    });
+}
+
+function criarCardInput(aluno, bimestre) {
+    const cardInputExistente = document.querySelector('.cardInput');
+
+    if (cardInputExistente) {
+        cardInputExistente.remove();
+    }
+
+    const cardInput = document.createElement("div");
+    cardInput.className = "cardInput";
+    cardInput.innerHTML = `
+        <input type="number" id="prova1" placeholder="Nota da Prova 1">
+        <input type="number" id="AEP1" placeholder="Nota da AEP 1">
+        <input type="number" id="prova_integrada1" placeholder="Nota da Prova Integrada 1">
+        <button id="salvarNotas">Salvar</button>
     `;
 
-    document.body.appendChild(card);
+    document.body.appendChild(cardInput);
+
+    const btnSalvaNotas = cardInput.querySelector('#salvarNotas'); 
+    btnSalvaNotas.addEventListener('click', function() {
+        const prova1 = document.getElementById('prova1').value;
+        const AEP1 = document.getElementById('AEP1').value;
+        const provaIntegrada1 = document.getElementById('prova_integrada1').value;
+
+        const notasBimestre1 = {
+            prova1: prova1,
+            AEP1: AEP1,
+            prova_integrada1: provaIntegrada1 
+        };
+
+        localStorage.setItem(`notasBimestre${bimestre}_${aluno.Ra}`, JSON.stringify(notasBimestre1));
+
+        cardInput.remove();
+    });
 }
-<<<<<<< Updated upstream
-
-function calcularNota(){
-    const tabela = document.getElementById("table_Content");
-    const fileira = tabela.getElementsByTagName("tr");
-    const resultadoBimestre1 = document.getElementById("resultadoBimestre1");
-    const resultadoBimestre2 = document.getElementById("resultadoBimestre2");
-
-    resultadoBimestre1.innerHTML = "";
-    resultadoBimestre2.innerHTML = "";
 
 
-    for (let i = 1; i < fileira.length; i++) {
-        let celulas = fileira[i].getElementsByTagName("td");
-        let totalNotaBimestre1 = 0;
-        let totalNotaBimestre2 = 0;
-
-   
-        for (let j = 3; j < celulas.length; j++) {
-            let nota = parseFloat(celulas[j].textContent);
-            if (j < 6) {
-                totalNotaBimestre1 += nota;
-            } else {
-                totalNotaBimestre2 += nota;
-            }
-        }
-        resultadoBimestre1.innerHTML += "Total Nota Bimestre 1 para o aluno " + (i + 1) + ": " + totalNotaBimestre1 + "<br>";
-        resultadoBimestre2.innerHTML += "Total Nota Bimestre 2 para o aluno " + (i + 1) + ": " + totalNotaBimestre2 + "<br>";
-
-}
-}
-=======
->>>>>>> Stashed changes
