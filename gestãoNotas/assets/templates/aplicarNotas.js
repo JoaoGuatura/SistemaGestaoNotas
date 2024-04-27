@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <td>${dados.Ra}</td>
             <td>${dados.nome}</td>
             <td>${dados.email}</td>
-            <td>${dados.prova1 || ''}</td>
-            <td>${dados.AEP1 || ''}</td>
-            <td>${dados.prova_integrada1 || ''}</td>
-            <td>${dados.prova2 || ''}</td>
-            <td>${dados.AEP2 || ''}</td>
-            <td>${dados.prova_integrada2 || ''}</td>
-            <td class="mediaBimestral1">${dados.media_bimestral1 || ''}</td>
         `;
         corpoTabela.appendChild(novaLinha);
     });

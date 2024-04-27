@@ -1,0 +1,55 @@
+<<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicar Notas</title>
+    <link rel="stylesheet" href="./cadastroNotas.css">
+    <link rel="shortcut icon" href="/gestãoNotas/assets/Icone_site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" id="inicio" href="\gestãoNotas\assets\templates\index.html">
+            Início
+        </a>
+        <span id="chevron_right1" class="material-symbols-outlined">
+            chevron_right
+        </span>
+        <a class="active" id="cadastro_notas" href="\gestãoNotas\assets\templates\cadastroNotas.html">
+            Cadastro de Notas
+        </a>
+    </div>
+
+    <div class="table_Container">
+        <table id="notasTabela">
+            <thead>
+                <tr>
+                    <th>Ra</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th class="hidden-header2" id="input_prova2">Prova 2</th>
+                    <th class="hidden-header2" id="input_aep2">AEP 2</th>
+                    <th class="hidden-header2" id="input_prova_int2">Prova Integrada 2</th>
+                    <th class="hidden-header2" id="media_bimestral2">Segunda média</th>
+                </tr>
+            </thead>
+            <tbody id="table_Content">
+            </tbody>
+        </table>
+    </div>
+    <div class="resultado">
+        <div id="resultadoBimestre1"></div>
+        <div id="resultadoBimestre2"></div>
+    </div>
+
+    <div class="botaoCalcular">
+        <button>Calcular Notas</button>
+    </div>
+
+    <button onclick="btnToggle()">Exibir notas do primeiro bimestre</button>
+    <button onclick="btnToggle2()">Exibir notas do segundo bimestre</button>
+
+    <script src="./aplicarNotas.js"></script>
+</body>
+</html>
