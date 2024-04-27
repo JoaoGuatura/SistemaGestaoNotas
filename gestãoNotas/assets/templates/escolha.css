@@ -36,11 +36,3 @@ body{
     transform: scale(1.02);
     color: white;
 }
-
-.rodape{
-    background-color: #33759f;
-    color: white; 
-    padding: 20px; 
-    margin: 0; 
-    text-align: center;
-}
