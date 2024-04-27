@@ -1,19 +1,44 @@
-
-th td {
-    border: 1px solid #dddddd;
-  text-align: left;
-  padding: 10px;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-table{
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 80%;
+th, td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+  background-color: #ffffff;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+.botaoCalcular, .botaoEnviar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.botaoCalcular button, .botaoEnviar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botaoCalcular button:hover, .botaoEnviar button:hover {
+  background-color: #45a049;
+}
 
 
   .form_Container{
