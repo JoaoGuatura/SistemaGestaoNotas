@@ -16,7 +16,7 @@
         <span id="chevron_right1"class="material-symbols-outlined">
             chevron_right
         </span>
-        <a class="active" id="cadastro_notas" href="\gestãoNotas\assets\templates\cadastroNotas.html">
+        <a class="active" id="cadastro_notas" href="\gestãoNotas\assets\templates\cadastroNotas1.html">
             Cadastro de Notas
         </a>
     </div>
@@ -57,12 +57,14 @@
     <div class="botaoEnviar">
         <button onclick="enviarNotas()">Enviar Notas</button>
     </div>
-
-
-
-    <button onclick="btnToggle(),exibirNotasBimestre1()">Exibir notas do primeiro bimestre</button>
-    <button onclick="btnToggle2()">Exibir notas do segundo bimestre</button>
-    <button onclick="abrirFormularioEdicao('${JSON.stringify(alunoJSON)}')">Editar tabela</button>
+    <div>
+        <button onclick="btnToggle(),exibirNotasBimestre1()">Exibir notas do primeiro bimestre</button>
+    </div>
+   <div>
+        <button onclick="abrirFormularioEdicao('${JSON.stringify(alunoJSON)}')">Editar tabela</button>
+   </div>
+    <!--<button onclick="btnToggle2()">Exibir notas do segundo bimestre</button> -->
+   
     <script src="./aplicarNotas.js"></script>
 </body>
 </html>
