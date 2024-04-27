@@ -1,7 +1,11 @@
-
 body{
-    background-color: white;
+    background-color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.margarina{
+    height: 28%;  
+    width: 28%; 
 }
 
 .apresenta{
@@ -19,22 +23,32 @@ body{
 }
 
 .atividade{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
     position: absolute; 
-    padding: 60px 120px 100px 60px; 
+    padding: 60px 120px 60px 60px; 
     border-radius: 15px;  
 }
 
 .botao{
-    background-color: #003759;
+    background-color: #87c9f1;
     padding: 20px;
     border: none; 
     width: 100%; 
     border-radius: 15px; 
     font-size: 14px; 
-    color: white; 
+    color: rgb(0, 0, 0); 
     text-align: center;
     margin: 0 auto;
+    margin-left: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.botao:hover{
+    background-color: #003759;
+    transform: scale(1.02);
+    color: white;
 }
 
 .logo{
@@ -45,4 +59,12 @@ body{
 .informacao{
     color: #33759f;
     font-size: large;
+}
+
+.rodape{
+    background-color: #33759f;
+    color: white; 
+    padding: 20px; 
+    margin: 0; 
+    text-align: center;
 }
