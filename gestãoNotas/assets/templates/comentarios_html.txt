@@ -1,0 +1,4 @@
+Authors are strongly encouraged to view the div element as an element of last resort,
+for when no other element is suitable. Use of the div element instead of
+more appropriate elements leads to poor accessibility
+ for readers and poor maintainability for authors.
