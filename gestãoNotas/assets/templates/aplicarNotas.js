@@ -3,6 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const corpoTabela = document.getElementById('table_Content');
 
     tabelaDados.forEach(function(dados) {
+        const primeiraMedia = parseFloat(dados.prova1 || 0) + parseFloat(dados.AEP1 || 0) + parseFloat(dados.prova_integrada1 || 0);
+        dados.primeiraMedia = primeiraMedia.toFixed(2);
+
+        if (primeiraMedia >= 7) {
+            dados.status = "Aprovado";
+        } else if (primeiraMedia < 5) {
+            dados.status = "Reprovado";
+        } else {
+            dados.status = "Recuperação";
+        }
+
         const novaLinha = document.createElement("tr");
         novaLinha.innerHTML = `
             <td>${dados.Ra}</td>
@@ -11,11 +22,22 @@ document.addEventListener('DOMContentLoaded', function() {
             <td>${dados.prova1 ? dados.prova1 : `<input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
             <td>${dados.AEP1 ? dados.AEP1 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
             <td>${dados.prova_integrada1 ? dados.prova_integrada1 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
-            <td class="mediaBimestral1">${dados.primeiraMedia || ''}</td>
+            <td>${dados.primeiraMedia}</td>
+            <td>${dados.status}</td>
         `;
         corpoTabela.appendChild(novaLinha);
     });
 });
+
+function calcularStatus(media) {
+    if (media >= 7) {
+        return "Aprovado";
+    } else if (media >= 4 && media < 7) {
+        return "Recuperação";
+    } else {
+        return "Reprovado";
+    }
+}
 
 
 
@@ -53,8 +75,22 @@ function atualizarTabelaNotas(tabelaDados) {
             <td>${aluno.prova1 || ''}</td>
             <td>${aluno.AEP1 || ''}</td>
             <td>${aluno.prova_integrada1 || ''}</td>
+            <td>${aluno.primeiraMedia || ''}</td>
+            <td>${aluno.status || ''}</td>
+            
             
         `;
+
+        const primeiraMedia = parseFloat(aluno.prova1 || 0) + parseFloat(aluno.AEP1 || 0) + parseFloat(aluno.prova_integrada1 || 0);
+        aluno.primeiraMedia = primeiraMedia.toFixed(2);
+
+        if (primeiraMedia >= 7) {
+            aluno.status = "Aprovado";
+        } else if (primeiraMedia < 5) {
+            aluno.status = "Reprovado";
+        } else {
+            aluno.status = "Recuperação";
+        }
         corpoTabela.appendChild(novaLinha);
     });
 }
