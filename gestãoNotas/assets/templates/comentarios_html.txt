@@ -1,0 +1,18 @@
+Authors are strongly encouraged to view the div element as an element of last resort,
+for when no other element is suitable. Use of the div element instead of
+more appropriate elements leads to poor accessibility
+ for readers and poor maintainability for authors.
+
+ Alternativas para div:
+ <nav> element
+<main> element
+<section> element
+<article> element
+<mark> element
+<blockquote> element
+<header> and <footer>  element
+<aside> element
+<figure> element
+<code> element
+ https://www.geeksforgeeks.org/10-alternatives-to-the-div-html-tag/
+ https://medium.com/@zac_heisey/7-alternatives-to-the-div-html-tag-7c888c7b5036

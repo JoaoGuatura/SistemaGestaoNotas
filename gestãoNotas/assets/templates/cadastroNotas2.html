@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicar Notas</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="/gestãoNotas/assets/Icone_site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" id="inicio" href="\gestãoNotas\assets\templates\index.html">
+            Início
+        </a>
+        <span id="chevron_right1"class="material-symbols-outlined">
+            chevron_right
+        </span>
+        <a class="active" id="cadastro_notas" href="\gestãoNotas\assets\templates\cadastroNotas1.html">
+            Cadastro de Notas
+        </a>
+    </div>
+
+
+    <div class="table_Container">
+        <table id="notasTabela">
+            <thead>
+                <tr>
+                    <th>Ra</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+
+
+
+                    <th class="notasParte" id="prova2" class="hidden-header2">Prova 2</th>
+                    <th class="notasParte" id="aep2" class="hidden-header2">AEP 2</th>
+                    <th class="notasParte" id="prova_int2" class="hidden-header2">Prova Integrada 2</th>
+                    <th class="notasParte" id="media_bimestral2" class="hidden-header2">Segunda nota</th>
+                    <th> media_final</th>
+                </tr>
+            </thead>
+            <tbody " id="table_Content">
+            </tbody>
+        </table>
+    </div>
+    <div class="resultado">
+        <div id="resultadoBimestre1"></div>
+        <div id="resultadoBimestre2"></div>
+    </div>
+    <div class="botaoCalcular">
+        
+        <button onclick="calcularNota()">Calcular Notas</button>
+    </div>
+    <div class="botaoEnviar">
+        <button onclick="enviarNotas()">Enviar Notas</button>
+    </div>
+  
+   
+    <script src="./aplicarNotas2.js"></script>
+</body>
+</html>

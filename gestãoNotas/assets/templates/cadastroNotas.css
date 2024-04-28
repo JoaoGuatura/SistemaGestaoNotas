@@ -1,0 +1,62 @@
+.topNav{
+  display:flex;
+  
+}
+
+#cadastro_notas, #inicio, #primeiro_bimestre, #segundo_bimestre{
+  font-size: larger;
+  text-decoration: none;
+}
+
+
+
+
+.botoes_cadastro_notas{
+  display: flex;
+  flex-direction: column;
+}
+/*#085484*/
+button{
+  background-color: #085484;
+  color: white;
+  border:none;
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+button:hover{
+  background-color: #0b6fad;
+  color: white;
+}
+
+button:active{
+  background-color: #0b6fad;
+  color: gray;
+  border:black;
+}
+
+  .form_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hidden-header{
+    visibility: hidden;
+  }
+
+  .hidden-header2{
+    visibility: hidden;
+  }
+
+ 
+  .notasBimestre {
+    display: none;
+}
+

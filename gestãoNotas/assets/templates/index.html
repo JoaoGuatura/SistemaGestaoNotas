@@ -1,43 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studeo2.0</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="shortcut icon" href="/gestãoNotas/assets/Icone_site.ico" type="image/x-icon">
 </head>
+
 <body>
-    <div>
-        <h1>Olá, bem vindo ao Studeo 2.0</h1>
+    <div class="apresenta">
+        <h1>Bem vindo ao Studeo 2.0</h1>
+    </div>
+
+    <div class="apresenta">
         <h2>Bem melhor que o 1.0</h2>
     </div>
 
-    <div>
-        <label for="casdastrar_aluno">O que você deseja realizar hoje?</label>
+    <div class="informacao">
+        <h2>Seu ambiente virtual <br> de controle de turma</h2>
+        <h4>Gerencie os perfis e avaliações dos discentes <br> <br> de forma simples e rápida</h4>
+        <img src="/gestãoNotas/assets/pngwing.com.png" class="margarina" alt="Familia Margarina">
+    </div>
 
-        <div>
-            <a href="templates/cadastroAluno.html">
-                <button>
-                    Cadastrar Aluno
-                </button>
-            </a>
+    <div class="opcoes">
 
-            <br>
+        <img src="\gestãoNotas\assets\unicesumar-logo-0.png" class="logo" alt="Logo Unicesumar">
 
-            <a href="templates/cadastroAluno.html">
-                <button>
-                    Editar Aluno
-                </button>
-            </a>
+        <label for="casdastrar_aluno">
+            <h3>O que você deseja realizar hoje?</h3>
+        </label>
 
-            <br>
+        <br>
+        <br>
 
-            <a href="templates/cadastroAluno.html">
-                <button>
-                    Aplicar notas
-                </button>
-            </a>
+        <div class="atividade">
+
+            <div>
+                <a href="cadastroAluno.html">
+                    <button class="botao">
+                        Cadastrar Aluno
+                    </button>
+                </a>
+
+                <br>
+                <br>
+
+                <a href="./escolha.html">
+                    <button class="botao">
+                        Aplicar Notas
+                    </button>
+                </a>
+
+                <br>
+                <br>
+
+                <a href="./medias.html">
+                    <button class="botao">
+                        Vizualizar medias
+                    </button>
+                </a>
+            </div>
         </div>
     </div>
-    
+
+    <footer class="rodape">
+       <strong>A faculdade com nota máxima na avaliação do MEC em ensino presencial e EAD do Brasil</strong> 
+    </footer>
+
 </body>
+
 </html>
