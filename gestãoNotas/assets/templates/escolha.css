@@ -1,8 +1,22 @@
-body{
+/*body{
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
 }
+*/
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    text-align: center;
+}
+
+#cadastro_notas, #inicio, #bimestre{
+    font-size: larger;
+    text-decoration: none;
+  }
 
 .corpo{
     background-color: rgba(0, 0, 0, 0.9);

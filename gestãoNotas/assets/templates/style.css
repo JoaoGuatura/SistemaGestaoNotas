@@ -3,6 +3,11 @@ table {
   border-collapse: collapse;
 }
 
+#cadastro_notas, #inicio, #primeiro_bimestre{
+  font-size: larger;
+  text-decoration: none;
+}
+
 th, td {
   border: 1px solid #dddddd;
   text-align: center;
@@ -70,7 +75,9 @@ tr:hover {
  color: #1D3E77;
 }
 
-
+header{
+  color: #1D3E77;
+}
 #pf{
   display: flex;
   justify-content: center;
