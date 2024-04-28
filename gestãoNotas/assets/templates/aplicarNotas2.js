@@ -35,6 +35,7 @@ function enviarNotas() {
     });
 
     localStorage.setItem('tabelaDados', JSON.stringify(tabelaDados));
+    calcularNota(); 
 }
 
 function calcularNota() {
@@ -46,7 +47,7 @@ function calcularNota() {
         let totalNotas = 0;
 
         for (let j = 3; j <= 5; j++) {
-            const nota = parseFloat(colunas[j].innerText);
+            const nota = parseFloat(colunas[j].querySelector('input') ? colunas[j].querySelector('input').value : colunas[j].innerText);
             if (!isNaN(nota)) {
                 totalNotas += nota;
             }
@@ -55,13 +56,10 @@ function calcularNota() {
         const segundaMedia = totalNotas.toFixed(2);
         colunas[6].innerText = segundaMedia;
 
-        const alunoIndex = i - 1; 
-        if (alunoIndex >= 0) {
-            const tabelaDados = JSON.parse(localStorage.getItem('tabelaDados')) || [];
-            if (tabelaDados[alunoIndex]) {
-                tabelaDados[alunoIndex].segundaMedia = segundaMedia;
-                localStorage.setItem('tabelaDados', JSON.stringify(tabelaDados));
-            }
+        const tabelaDados = JSON.parse(localStorage.getItem('tabelaDados')) || [];
+        if (tabelaDados[i]) {
+            tabelaDados[i].segundaMedia = segundaMedia;
+            localStorage.setItem('tabelaDados', JSON.stringify(tabelaDados));
         }
     }
 }
