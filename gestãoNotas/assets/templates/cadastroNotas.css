@@ -3,23 +3,14 @@
   
 }
 
-#chevron_right1{
-  
-}
-
-#inicio{
-  font-size:larger;
-  text-decoration: none;
-}
-
-#cadastro_notas{
+#cadastro_notas, #inicio, #primeiro_bimestre, #segundo_bimestre{
   font-size: larger;
   text-decoration: none;
 }
 
-#primeiro_bimestre{
-  
-}
+
+
+
 .botoes_cadastro_notas{
   display: flex;
   flex-direction: column;
