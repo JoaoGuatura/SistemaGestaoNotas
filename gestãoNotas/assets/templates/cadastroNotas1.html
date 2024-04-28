@@ -32,10 +32,10 @@
 
 
 
-                    <th class="notasParte" id="prova1" class="hidden-header">Prova 1</th>
-                    <th class="notasParte" id="aep1" class="hidden-header">AEP 1</th>
-                    <th class="notasParte" id="prova_int1" class="hidden-header">Prova Integrada 1</th>
-                    <th class="notasParte" id="media_bimestral1" class="hidden-header">Primeira média</th>
+                    <th class="notasParte" id="prova1" >Prova 1</th>
+                    <th class="notasParte" id="aep1" >AEP 1</th>
+                    <th class="notasParte" id="prova_int1" >Prova Integrada 1</th>
+                    <th class="notasParte" id="media_bimestral1" >Primeira nota</th>
                 </tr>
             </thead>
             <tbody " id="table_Content">
@@ -53,13 +53,8 @@
     <div class="botaoEnviar">
         <button onclick="enviarNotas()">Enviar Notas</button>
     </div>
-    <div>
-        <button onclick="btnToggle(),exibirNotasBimestre1()">Exibir notas do primeiro bimestre</button>
-    </div>
-   <div>
-        <button onclick="abrirFormularioEdicao('${JSON.stringify(alunoJSON)}')">Editar tabela</button>
-   </div>
-    <!--<button onclick="btnToggle2()">Exibir notas do segundo bimestre</button> -->
+    
+
    
     <script src="./aplicarNotas.js"></script>
 </body>
