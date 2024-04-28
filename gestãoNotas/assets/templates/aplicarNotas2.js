@@ -3,19 +3,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const corpoTabela = document.getElementById('table_Content');
 
     tabelaDados.forEach(function(dados) {
+        const segundaMedia = parseFloat(dados.prova2 || 0) + parseFloat(dados.AEP2 || 0) + parseFloat(dados.prova_integrada2 || 0);
+        dados.segundaMedia = segundaMedia.toFixed(2);
+
+        if (segundaMedia >= 7) {
+            dados.status = "Aprovado";
+        } else if (segundaMedia < 5) {
+            dados.status = "Reprovado";
+        } else {
+            dados.status = "Recuperação";
+        }
+
         const novaLinha = document.createElement("tr");
         novaLinha.innerHTML = `
             <td>${dados.Ra}</td>
             <td>${dados.nome}</td>
             <td>${dados.email}</td>
-            <td>${dados.prova2 ? dados.prova2 : `<input type="number" min="0" max="8" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
-            <td>${dados.AEP2 ? dados.AEP2 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
-            <td>${dados.prova_integrada2 ? dados.prova_integrada2 : `<input type="number" min="0" max="1" step="0.01" class="notaInput" placeholder="Insira a nota">`}</td>
-            <td class="mediaBimestral2">${dados.segundaMedia || ''}</td>
+            <td>${dados.prova2 || ''}</td>
+            <td>${dados.AEP2 || ''}</td>
+            <td>${dados.prova_integrada2 || ''}</td>
+            <td>${dados.segundaMedia}</td>
+            <td>${dados.status}</td>
         `;
         corpoTabela.appendChild(novaLinha);
     });
 });
+
+
+function calcularStatus(media) {
+    if (media >= 7) {
+        return "Aprovado";
+    } else if (media >= 4 && media < 7) {
+        return "Recuperação";
+    } else {
+        return "Reprovado";
+    }
+}
+
 
 function enviarNotas() {
     const tabelaDados = [];
